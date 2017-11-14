@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let item of items">
+  <ion-card *ngFor="let item of items" (click)="displayDetail()">
 
     <ion-card-header>
         <p><img src="{{item.image}}"></p>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NativeAudio } from "@ionic-native/native-audio";
 
 @Component({
   selector: 'page-home',
@@ -36,8 +37,13 @@ export class HomePage {
     }
   ];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private nativeAudio: NativeAudio) {
+    this.nativeAudio.preloadSimple('m1', 'music/s1.mp3');
+  }
 
+  displayDetail() {
+    console.log('OK');
+    this.nativeAudio.play('m1');
   }
 
 }
